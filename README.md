@@ -1,3 +1,6 @@
+Compose Multiplatform client for mygame-backend repository.
+Project in development
+
 This is a Kotlin Multiplatform project targeting Android, Web.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
