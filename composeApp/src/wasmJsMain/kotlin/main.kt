@@ -12,5 +12,5 @@ fun main() {
         componentContext = DefaultComponentContext(lifecycle = lifecycle)
     )
     lifecycle.resume()
-    CanvasBasedWindow(canvasElementId = "ComposeTarget") { App(root) }
+    CanvasBasedWindow(canvasElementId = "ComposeTarget") { App(darkTheme = true,root = root) }
 }

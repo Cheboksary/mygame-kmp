@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -20,13 +19,17 @@ import navigation.RootComponent
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import ui.ConnectScreen
 import ui.StartScreen
+import ui.theme.AppTheme
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-fun App(root: RootComponent) {
-    MaterialTheme {
+fun App(
+    darkTheme: Boolean,
+    root: RootComponent
+) {
+    AppTheme(darkTheme = darkTheme) {
         val childStack by root.childStack.subscribeAsState()
-        // container Box() may be omitted depending on the value getPlatform() is equals Platform.Android
+        // container Box() may be omitted depending on the value of expect/actual fun getPlatform() is equals Platform.Android
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()

@@ -4,6 +4,7 @@ import App
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.isSystemInDarkTheme
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.defaultComponentContext
 import com.arkivanov.decompose.retainedComponent
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
         }*/
 
         setContent {
-            App(root)
+            App(darkTheme = isSystemInDarkTheme(),root = root)
         }
     }
 }
