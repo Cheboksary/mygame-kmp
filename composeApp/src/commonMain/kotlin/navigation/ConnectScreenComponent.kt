@@ -6,7 +6,7 @@ import com.arkivanov.decompose.value.Value
 
 class ConnectScreenComponent(
     componentContext: ComponentContext,
-    private val onNavigateToLobbyScreen: () -> Unit,
+    private val onNavigateToLobbyScreen: (lobbyId: String, name: String) -> Unit,
     private val onBackPressed: () -> Unit
 ) : ComponentContext by componentContext {
 
@@ -18,7 +18,9 @@ class ConnectScreenComponent(
 
     fun onEvent(event: ConnectScreenEvent) {
         when (event) {
-            is ConnectScreenEvent.ClickButtonConnect -> onNavigateToLobbyScreen()
+            is ConnectScreenEvent.ClickButtonConnect ->  {
+                onNavigateToLobbyScreen( _lobbyId.value, _userName.value)
+            }
             is ConnectScreenEvent.ClickButtonBack -> onBackPressed()
             is ConnectScreenEvent.UpdateLobbyIdText -> {
                 _lobbyId.value = event.lobbyId

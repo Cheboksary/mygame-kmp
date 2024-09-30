@@ -11,11 +11,12 @@ actual fun getPlatform(): Platform = Platform.Wasm
 
 actual fun getClient() = HttpClient() {
     install(WebSockets) {
+        pingInterval = 5_000
         contentConverter = KotlinxWebsocketSerializationConverter(Json)
     }
 }
 
-actual fun getLocalHostIP() = "ws://127.0.0.0:8080"
+actual fun getLocalHostIP() = "wss://ru-mygame-mygame-backend.onrender.com"//"ws://127.0.0.1:8080"
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
