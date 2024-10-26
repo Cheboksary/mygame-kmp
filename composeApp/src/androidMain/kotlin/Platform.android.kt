@@ -27,7 +27,7 @@ actual fun getClient() = HttpClient(CIO) {
     }*/
 }
 
-actual fun getLocalHostIP() = "ws://10.0.2.2:8080"
+actual fun getLocalHostIP() = "wss://ru-mygame-mygame-backend.onrender.com" //"ws://10.0.2.2:8080"
 
 @Composable
 actual fun getScreenHeight() = LocalConfiguration.current.screenHeightDp.dp
